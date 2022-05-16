@@ -1,0 +1,18 @@
+# Busca Binária
+def busca_binaria(v, p, r, x):
+if p <= r:
+q = (p+r) // 2
+if x > v[q]:
+return busca_binaria(v,q+1, r, x)
+elif x < v[q]:
+return busca_binaria(v, p, q-1, x)
+else:
+return q
+return -1
+vetor = list(range(0,10))
+chave = 9
+posicao = busca_binaria(vetor, 0, len(vetor)-1, chave)
+if posicao >= 0:
+print("a chave foi encontrada em %d."(chave, posicao))
+else:
+print("chave %d não listada." % chave)
